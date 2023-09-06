@@ -48,7 +48,7 @@ public class CsvShaping implements CsvShapingInterface {
         String firstXXXPath =  (targetPath.toString() + "\\" + "01_" + firstTBL);
         //counter
         int count = 1;
-        int recCount = 1; //count appended for Rec #2
+        int recCount = 1; //count appended for RRR #2
         
         //initialSet
         
@@ -62,7 +62,7 @@ public class CsvShaping implements CsvShapingInterface {
         BufferedWriter bw = Files.newBufferedWriter(XXXTBL,charset);
         
 
-        Path pathForRec = null; //Folder For Rec#2
+        Path pathForRec = null; //Folder For RRR#2
 
 
         
@@ -77,7 +77,7 @@ public class CsvShaping implements CsvShapingInterface {
                 
        
             
-            //case : contains:TBL
+            //case : contains:TTT
             
             }
             if (str[i].contains("TTT")) {
@@ -86,7 +86,7 @@ public class CsvShaping implements CsvShapingInterface {
               
 
 
-                //case 0 YYY</XXXTBL>close
+                //case 0 YYY</XXXTTT>close
                        if (sb.indexOf("<")!=0){
 
                        bw.write(sb.substring(0,str[i].indexOf("<")));
