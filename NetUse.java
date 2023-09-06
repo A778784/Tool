@@ -186,7 +186,7 @@ public class NetUse implements NetUseInterface {
     
     public void callAAA(Path target) {
 
-        String xxxAbsolutePath = ("C:\\999_JavaTools\\001_TranGetter\\000_設定\XXX\\XXX.exe");
+        String xxxAbsolutePath = ("C:\\999_JavaTools\\001_Getter\\000_設定\XXX\\XXX.exe");
         
 
         String cmds [] = new String [] {xxxAbsolutePath,target.toString()};
