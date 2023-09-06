@@ -13,21 +13,11 @@ public class HeaderMake implements HeaderMakeInterface {
     //HeaderPath
     String headerList[] = {"01_A_Value_Name.txt","02_B_Value_Name.txt","03_C_Value_Name.txt","04_D_Value_Name.txt","05_E_Value_Name.txt","06_F_Value_Name.txt"};
     
-    //For real
     Path headerCommonPath = Paths.get("C:/999_JavaTools/001_Getter/000_設定/HeaderFiles");
-
-
-
-    
-    
+  
     public void makeHeader(Path targetPath,String outFileStr,Path commonPath) {
     try {
-
-        
-        
-
-        
-       
+  
        Charset charset = Charset.forName("SHIFT_JIS");
        String lines = Files.readString(targetPath,charset);
        
@@ -61,11 +51,8 @@ public class HeaderMake implements HeaderMakeInterface {
             if (flag.equals("1")){
                 individualFlag = iniReading.individualFlag(1);
                 }
-                
-            
-        
-        
-    } else if (strJudge.equals("B")) {
+
+        } else if (strJudge.equals("B")) {
         headerLines = headerCommonPath + "/" + headerList[1];
         if (flag.equals("1")){
                individualFlag = iniReading.individualFlag(2);
@@ -102,8 +89,6 @@ public class HeaderMake implements HeaderMakeInterface {
         
        String headerinput [] = headerLines.split(",");
         int countNo =1;
-        
-
      
         for (int i = 0; i < linput.length; i++) {
             
@@ -127,24 +112,13 @@ public class HeaderMake implements HeaderMakeInterface {
                     }
             }
         
-               
-            
-            
-                    
         } bw.flush();
           bw.close();
-          //System.out.println("---HeaderMake---\tOK");
 
        if (individualFlag.equals("1")){
             iniReading.iniFileRead(strJudge,targetPath,commonPath);
                }
-
-
-
- 
-
-        
-        
+     
        } catch(IOException e ) {
         System.out.println(e.getMessage());
     }
