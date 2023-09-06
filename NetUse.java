@@ -102,7 +102,7 @@ public class NetUse implements NetUseInterface {
       @Override
       public void copyFile(Object context){
       StringBuilder sb = new StringBuilder();
-      //Context which WatchService gets; ex:Tran..dat
+      
       String cont = context.toString();
       sb.append(cont);
       String numberName = sb.substring(cont.indexOf(".")-4,cont.indexOf("."));
