@@ -14,8 +14,6 @@ public class NetUse implements NetUseInterface {
     private static Path destination;
     
     CsvShapingInterface csvShape = new CsvShaping();
-
-
     // inputPath
     @Override
       
@@ -50,9 +48,6 @@ public class NetUse implements NetUseInterface {
         } else {
             this.date = date;
         }
-        
-       
-
     }
 
     @Override
@@ -64,9 +59,6 @@ public class NetUse implements NetUseInterface {
     public Path getPath(){
         return this.filePath;
     }
-
-
-    
     //Net Use 
     
     @Override
@@ -81,11 +73,6 @@ public class NetUse implements NetUseInterface {
         System.exit(0);
         }
     }
-        
-    
-
-
-
 
     //Destination mkdir & field setted.
     @Override
@@ -153,28 +140,20 @@ public class NetUse implements NetUseInterface {
       Files.copy(source,target);
       callAAA(target);
 
-
       xxxSb.append(target.toString());
       xxxTarget = xxxSb.substring(xxxSb.indexOf("-"),xxxSb.lastIndexOf("."));
       xxxTarget = "TTT" + xxxTarget + ".dat";
       
       target = Paths.get(xxxFileDir + "/" + xxxTarget);
       
-      
-      //must.
-
-
       } catch (IOException e ) {
           e.printStackTrace();
           System.exit(0);
       }
       
-      
       csvShape.csvShaping(Paths.get(xxxFileDir),target);
       
     }
-
-
 
     //give WatchService dstpath.
     @Override
