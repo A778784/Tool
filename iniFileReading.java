@@ -8,9 +8,7 @@ import java.io.IOException;
 
 
 public class iniFileReading {
-    //SwingValue swingValue = new SwingValue();
-
-    //For Local2
+    
     Path iniFilePath = Paths.get("C:/999_JavaTools/001_Getter/000_設定/targetValue.ini");
 
     public void iniFileRead(String tBLName,Path targetPath,Path commonPath) 
@@ -19,9 +17,6 @@ public class iniFileReading {
         
         try {
         Charset charset = Charset.forName("SHIFT_JIS");
-        
-        // Must be changed when directories are changed.
-                
         
         String lines = Files.readString(targetPath,charset);
         String iniLines = Files.readString(iniFilePath,charset);
@@ -47,11 +42,7 @@ public class iniFileReading {
         String targetObject [] = Files.readString(targetPath,charset).split("\r\n");
 
         // ini value Check
-
-
-
-        
-        if (tBLName.equals("A")) {
+     if (tBLName.equals("A")) {
 
             specifiedValues.append(arrayIniLines[7]);
             if(specifiedValues.substring(arrayIniLines[7].indexOf("=")+1).equals("")) {
@@ -68,15 +59,9 @@ public class iniFileReading {
                 
                 System.out.println(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.write(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
-                bw.newLine();
-
-                
-                
+                bw.newLine();               
             }bw.flush();
             bw.close();
-
-          
-
              }
          }
 
@@ -90,20 +75,14 @@ public class iniFileReading {
              
             arrayObject = (specifiedValues.substring(arrayIniLines[8].indexOf("=")+1,arrayIniLines[8].length()));
             arrayObjectIniLines = arrayObject.split(",");
-
-            
-
-            for (int i = 0; i < arrayObjectIniLines.length; i++) {
+  
+                for (int i = 0; i < arrayObjectIniLines.length; i++) {
                 System.out.println(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.write(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.newLine();
-
-                
-                
+              
             }bw.flush();
             bw.close();
-
-
             } 
         }
         
@@ -117,20 +96,13 @@ public class iniFileReading {
             arrayObjectIniLines = arrayObject.split(",");
             System.out.println("---ZZZ---");
 
-
-            
-
             for (int i = 0; i < arrayObjectIniLines.length; i++) {
                 System.out.println(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.write(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.newLine();
-
-                
-                
+              
             }bw.flush();
             bw.close();
-            
-
         }
     }
 
@@ -144,15 +116,11 @@ public class iniFileReading {
             arrayObjectIniLines = arrayObject.split(",");
             System.out.println("---AAA---");
 
-            
-
-            for (int i = 0; i < arrayObjectIniLines.length; i++) {
+                for (int i = 0; i < arrayObjectIniLines.length; i++) {
                 System.out.println(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.write(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.newLine();
-
-                
-                
+             
             }bw.flush();
             bw.close();     
             
@@ -168,21 +136,14 @@ public class iniFileReading {
             arrayObject = (specifiedValues.substring(arrayIniLines[11].indexOf("=")+1,arrayIniLines[11].length()));
             arrayObjectIniLines = arrayObject.split(",");
             System.out.println("---BBB---");
-
-         
+       
             for (int i = 0; i < arrayObjectIniLines.length; i++) {
                 System.out.println(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.write(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.newLine();
-
-                
-                
-            }bw.flush();
+           }bw.flush();
             bw.close();     
-           
-
-    
-        }
+       }
     }       
             if (tBLName.equals("F")) {
          specifiedValues.append(arrayIniLines[12]);
@@ -192,19 +153,13 @@ public class iniFileReading {
             arrayObjectIniLines = arrayObject.split(",");
             System.out.println("---CCC---");
 
-            
-
             for (int i = 0; i < arrayObjectIniLines.length; i++) {
                 System.out.println(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.write(targetObject[(Integer.parseInt(arrayObjectIniLines[i]))]);
                 bw.newLine();
-
-                
-                
+           
             }bw.flush();
             bw.close();     
-           
-
         }
     }
 
@@ -222,8 +177,6 @@ public class iniFileReading {
       String flagStr = Files.readString(iniFilePath);
       flagJudge.append(flagStr);
       commonFlag = flagJudge.substring(flagStr.indexOf("=")+1,flagStr.indexOf("=")+2);
-      
-      
        
     } catch (IOException e ) {
         System.out.println(e.getMessage());
@@ -249,10 +202,6 @@ public class iniFileReading {
             System.out.println(e.getMessage());
         }
         return individualFlag;
-    
-
-
-
-
+  
    }
 }
